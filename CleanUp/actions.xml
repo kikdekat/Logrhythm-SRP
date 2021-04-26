@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="CleanUp" Guid="6f69888c-80d9-4e63-9790-676abcb1f7e8" Version="1" IsLogRhythmPlugin="true">
+  <remv1:Action Name="Post-Mass Phishing Cleaning" Command="powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file CleanUp.ps1" Order="1" />
+    <remv1:StringParameter Name="[InboxRule] User(s)" Switch="-emails" Order="2"/>
+    <remv1:StringParameter Name="[InboxRule] Rule ID(s)" Switch="-ruleID" Order="3"/>	
+	<remv1:StringParameter Name="[PURGE] Content Search Name" Switch="-searchName" Order="4"/>
+  </remv1:Action>
+</remv1:Remediation-Plugin>

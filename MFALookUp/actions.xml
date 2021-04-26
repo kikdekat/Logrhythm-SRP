@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="Check MFA Status" Guid="880cb8db-4a69-474a-b119-347eba3cfc62" Version="1" IsLogRhythmPlugin="true">
+  <remv1:Action Name="Check MFA Status" Command="powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR_MFALookUp.ps1" Order="1" />
+    <remv1:StringParameter Name="User(s)" Switch="-Users" Order="2" />
+  </remv1:Action>
+</remv1:Remediation-Plugin>

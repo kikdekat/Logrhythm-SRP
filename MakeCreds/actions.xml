@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="MakeCreds" Guid="33086e1c-661a-484f-a3e2-c951f6f2db07" Version="1" IsLogRhythmPlugin="true">
+  <remv1:Action Name="Create Credentials file" Command="powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file setup.ps1" Order="1" />
+    <remv1:StringParameter Name="Domain Account" Switch="-domainhost " Order="2"/>
+    <remv1:StringParameter Name="Account Name" Switch="-acctName " Order="3"/>
+	<remv1:EncryptedParameter>
+		<remv1:StringParameter Name="Password" Switch="-password " Order="4"/>
+	</remv1:EncryptedParameter>
+	<remv1:StringParameter Name="Creds file path" Switch="-CredentialsFilePath " Order="5">
+		<remv1:DefaultInput>
+			<remv1:StaticInput Value="C:\Program Files\LogRhythm\SmartResponsePlugins\Cred.xml" />
+		</remv1:DefaultInput>
+	</remv1:StringParameter>	
+  </remv1:Action>
+</remv1:Remediation-Plugin>

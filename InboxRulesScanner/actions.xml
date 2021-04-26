@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="InboxRules Scanner" Guid="33d3b99c-e15c-46da-b9ff-c12b6fa851e8" Version="1" IsLogRhythmPlugin="true">
+  <remv1:Action Name="InboxRules Scanner" Command="powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file IR_Scanner.ps1" Order="1" />
+    <remv1:StringParameter Name="User(s) to scan" Switch="-emails" Order="2"/>
+	<remv1:StringParameter Name="Notify (optional)" Switch="-notif" Order="3"/>
+	<remv1:StringParameter Name="IP (optional - for proxy check)" Switch="-sourceip" Order="4"/>
+  </remv1:Action>
+</remv1:Remediation-Plugin>

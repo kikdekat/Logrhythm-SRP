@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="Disable/Enable User(s)" Guid="c72722c3-3e03-42d6-9ba4-341d819fd8a5" Version="1" IsLogRhythmPlugin="true">
+  <remv1:Action Name="Disable/Enable User(s)" Command="powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR_LockemUp.ps1" Order="1" />
+    <remv1:StringParameter Name="Unlock User(s)" Switch="-ULUsers" Order="2" />
+    <remv1:StringParameter Name="Disable User(s)" Switch="-bUsers" Order="3" />
+    <remv1:StringParameter Name="Enable User(s)" Switch="-uUsers" Order="4" />	
+    <remv1:StringParameter Name="Send notification to" Switch="-notif" Order="5">
+      <remv1:DefaultInput>
+        <remv1:StaticInput Value="email@example.com" />
+      </remv1:DefaultInput>
+    </remv1:StringParameter>
+  </remv1:Action>
+</remv1:Remediation-Plugin>

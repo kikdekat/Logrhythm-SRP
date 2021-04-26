@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="Disable BasicAuth" Guid="221ecb16-1214-4b2c-abf8-46ef37c03066" Version="1" IsLogRhythmPlugin="true">
+  <remv1:Action Name="Disable BasicAuth" Command="powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR_BlockBA.ps1" Order="1" />
+    <remv1:StringParameter Name="User(s)" Switch="-users" Order="2" />
+    <remv1:StringParameter Name="Policy Name" Switch="-policyName" Order="3">
+      <remv1:DefaultInput>
+        <remv1:StaticInput Value="Block Basic Auth" />
+      </remv1:DefaultInput>
+    </remv1:StringParameter>	
+    <remv1:StringParameter Name="Send notification to" Switch="-notif" Order="4">
+      <remv1:DefaultInput>
+        <remv1:StaticInput Value="email@example.com" />
+      </remv1:DefaultInput>
+    </remv1:StringParameter>
+  </remv1:Action>
+</remv1:Remediation-Plugin>

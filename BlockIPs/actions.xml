@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<remv1:Remediation-Plugin xmlns:remv1="RemediationVersion1.xsd" Name="Block/Unblock IPs" Guid="b1beb6b6-2c07-48b9-a99e-5bdc15a24d9b" Version="1" IsLogRhythmPlugin="true">
+  <remv1:Action Name="Block/Unblock IPs" Command="powershell.exe">
+    <remv1:ConstantParameter Name="Script" Switch="-file LR_BlockIPs.ps1" Order="1" />
+    <remv1:StringParameter Name="Block IP(s)" Switch="-bIPs" Order="2" />
+    <remv1:StringParameter Name="Unblock IP(s)" Switch="-uIPs" Order="3" />
+    <remv1:StringParameter Name="List ID" Switch="-listID" Order="4">
+      <remv1:DefaultInput>
+        <remv1:StaticInput Value="4207e1b6-eda0-4974-a782-a80208aebc8c" />
+      </remv1:DefaultInput>	
+	</remv1:StringParameter>  
+    <remv1:StringParameter Name="Send notification to" Switch="-notif" Order="5">
+      <remv1:DefaultInput>
+        <remv1:StaticInput Value="email@example.com" />
+      </remv1:DefaultInput>
+    </remv1:StringParameter>
+    <remv1:StringParameter Name="[AUTO]" Switch="-mutex" Order="6" />	
+  </remv1:Action>
+</remv1:Remediation-Plugin>
